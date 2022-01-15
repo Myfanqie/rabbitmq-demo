@@ -9,6 +9,8 @@
 # BlueJ files
 *.ctxt
 
+*.iml
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -104,3 +106,4 @@ atlassian-ide-plugin.xml
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+src/
