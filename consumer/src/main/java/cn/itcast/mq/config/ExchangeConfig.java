@@ -31,7 +31,7 @@ public class ExchangeConfig {
 
     @Bean
     public Queue objectQueue(){
-        return new Queue("objet.queue");
+        return new Queue("object.queue");
     }
 
     /**

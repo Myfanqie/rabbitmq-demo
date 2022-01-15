@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class SpringAMQPTest {
@@ -41,5 +44,12 @@ public class SpringAMQPTest {
         String directExchangeName = "itcast.direct";
         String routerKey = "red";
         rabbitTemplate.convertAndSend(directExchangeName,routerKey,"这个就是DirectExchange发送的消息");
+    }
+
+    @Test
+    public void sendObject(){
+        Map<String, String> map = new HashMap<>();
+        map.put("say","Hello MQ");
+        rabbitTemplate.convertAndSend("object.queue",map);
     }
 }
