@@ -29,6 +29,11 @@ public class ExchangeConfig {
         return new Queue("fan.queue2");
     }
 
+    @Bean
+    public Queue objectQueue(){
+        return new Queue("objet.queue");
+    }
+
     /**
      * 绑定交换机和队列
      * @return
