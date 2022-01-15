@@ -17,3 +17,21 @@
 
 
 ## SpringAMQP消息转换器
+
+默认的情况下，消息发送出去转换都是outputSteam，这种方式很低效，可以使用和springmvc一样的json来解析
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+</dependency>
+```
+
+然后注入bean就有了
+
+```java
+@Bean
+public MessageConverter messageConverter (){
+    return new Jackson2JsonMessageConverter();
+}
+```
